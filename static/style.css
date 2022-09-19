@@ -1,0 +1,42 @@
+textarea {
+            font-size: 12pt;
+            max-width: 99%;
+            min-width: 99%;
+            max-height: 250px;
+            min-height: 100px;
+            height: 100px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            background: #6ec0c9;
+            background: -moz-linear-gradient(top, #8f9a9a 0%, #7395bb 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e0e0e0), color-stop(100%, #ffffff));
+            background: -webkit-linear-gradient(top, #e0e0e0 0%, #ffffff 100%);
+            background: -o-linear-gradient(top, #e0e0e0 0%, #ffffff 100%);
+            background: -ms-linear-gradient(top, #e0e0e0 0%, #ffffff 100%);
+            background: linear-gradient(to bottom, #61b7c0 0%, #ffffff 100%);
+            writing-mode: horizontal-tb !important;
+            font-family: monospace;
+            text-rendering: auto;
+            letter-spacing: normal;
+            word-spacing: normal;
+            line-height: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            appearance: auto;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            column-count: initial !important;
+            border-width: 2px;
+            border-style: solid;
+            padding: 2px;
+        }
+.flex-container{
+    display: flex;
+    Grid-gap: 8px;
+}

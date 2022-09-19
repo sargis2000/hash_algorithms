@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<form method="post" action="{% url 'sha_url' %}" name="text_form">
+    {% csrf_token %}
+    <label for="text">
+        <textarea name="text">{{ text }}</textarea>
+    </label>
+    {% for i in available_algorithms %}
+        <div class="flex-container">
+            <button type="submit" name="alg_name" value="{{ i }}"> {{ i.upper }}</button>
+        </div>
+    {% endfor %}
+</form>
+{% if error %}
+    {{ error }}
+{% endif %}
+<label for="text">
+    <textarea name="text"> {% if hash %} {{ hash }} {% endif %} </textarea>
+</label>
+
+</body>
+</html>

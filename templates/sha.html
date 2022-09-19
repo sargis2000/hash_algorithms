@@ -5,25 +5,84 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <form method="post" action="{% url 'sha_url' %}" name="text_form">
     {% csrf_token %}
     <label for="text">
-        <textarea name="text">{{ text }}</textarea>
+        <textarea name="text" class="first">{{ text }}</textarea>
     </label>
-    {% for i in available_algorithms %}
-        <div class="flex-container">
-            <button type="submit" name="alg_name" value="{{ i }}"> {{ i.upper }}</button>
-        </div>
-    {% endfor %}
+    <div class="flex-container">
+        {% for i in available_algorithms %}
+            <button type="submit" name="alg_name" value="{{ i }}" class="nice_button"> {{ i.upper }}</button>
+        {% endfor %}
+    </div>
 </form>
 {% if error %}
     {{ error }}
 {% endif %}
-<label for="text">
-    <textarea name="text"> {% if hash %} {{ hash }} {% endif %} </textarea>
+<label for="second">
+    <textarea readonly name="text" class="second"> {% if hash %} {{ hash }} {% endif %} </textarea>
 </label>
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+
+        <h3>Company<span>logo</span></h3>
+
+        <p class="footer-links">
+            <a href="/" class="link-1">Home</a>
+
+        </p>
+
+        <p class="footer-company-name">Company Name © 2022</p>
+    </div>
+
+    <div class="footer-center">
+
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p>Armenia | Yerevan</p>
+        </div>
+
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+374 95 05 07 68</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">khachatryansargis2000@gmail.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>About the company</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+            vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="https://www.facebook.com/profile.php?id=100070666118880"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/sargis-khachatryan-6b353a212/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/sargis2000"><i class="fa fa-github"></i></a>
+
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
+
+
+
+
+
+

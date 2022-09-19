@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import sha_view
+from .views import *
 
 urlpatterns = [
     path('', sha_view, name='sha_url')

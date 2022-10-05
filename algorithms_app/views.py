@@ -17,9 +17,11 @@ def hasher(request):
 
 
 def sha_view(request):
+    print(hashlib.algorithms_available)
     available_algorithms = list(
-        hashlib.algorithms_available ^ {'whirlpool', 'whirlpool', 'md4', 'ripemd160', 'shake_128', 'shake_256'}
+        hashlib.algorithms_available ^ {'shake_128', 'shake_256'}
     )
+    print(available_algorithms)
     available_algorithms.sort()
     available_algorithms = {'available_algorithms': available_algorithms}
 
